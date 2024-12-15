@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-background {
+  background: linear-gradient(
+    180deg,
+    #303841,
+    /* Dunkles Grau oben */ #3a4750 60%,
+    /* Etwas helleres Grau in der Mitte */ #2c3237 100% /* Noch dunkler unten für Tiefe */
+  );
+  color: #eeeeee; /* Dezente Schriftfarbe für Kontrast */
+  font-family: 'Arial', sans-serif; /* Moderne Schriftart */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Vollbildhöhe */
+}
