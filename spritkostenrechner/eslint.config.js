@@ -27,7 +27,8 @@ export default [
       ...jsPlugin.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
       ...tsEslint.configs.recommended.rules,
-      'react/react-in-jsx-scope': 'off'
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off'
     },
     settings: {
       react: {
