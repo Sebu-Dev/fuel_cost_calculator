@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Distance from './Distance';
 
-interface DummyProps {
-  distance: number | null;
-  setDistance: (value: number | 0) => void;
+interface CarPoolProps {
+  driverTrips: number | 0;
+  driverDistance: number | 0;
+  passengerTrips: number | 0;
+  passengerDistance: number | 0;
+  setDriverTrips: (value: number | 0) => void;
+  setDriverDistance: (value: number | 0) => void;
+  setPassengerTrips: (value: number | 0) => void;
+  setPassengerDistance: (value: number | 0) => void;
 }
 
-export const Dummy: React.FC<DummyProps> = () => {
-  const [driverTrips, setDriverTrips] = useState(0);
-  const [driverDistance, setDriverDistance] = useState(0);
-  const [passengerTrips, setPassengerTrips] = useState(0);
-  const [passengerDistance, setPassengerDistance] = useState(0);
-
+export const CarPool: React.FC<CarPoolProps> = ({
+  driverDistance,
+  driverTrips,
+  setDriverDistance,
+  setDriverTrips,
+  passengerDistance,
+  passengerTrips,
+  setPassengerDistance,
+  setPassengerTrips
+}) => {
   return (
     <div className="flex flex-wrap justify-center gap-6 mt-6">
       {/* Wie oft warst du der Fahrer? */}

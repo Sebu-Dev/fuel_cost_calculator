@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { Dummy } from '../Calculator/dummy';
 
 const FuelCostCalculator = () => {
   const { translations } = useLanguage();
@@ -26,7 +25,6 @@ const FuelCostCalculator = () => {
       <h2 className="my-20 text-center text-4xl">{translations.FUELCOSTCALCULATOR.headline}</h2>
 
       <div className="flex flex-wrap justify-center gap-6">
-        <Dummy />
         {/* Input Fields */}
         <div className="w-full sm:w-1/3 lg:w-1/4">
           <div className="flex flex-col items-center bg-neutral-800 p-6 rounded-2xl shadow-lg">
