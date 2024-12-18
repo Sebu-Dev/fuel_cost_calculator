@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { Dummy } from './components/Calculator/dummy';
+import { CarPool } from './components/Calculator/CarPool';
 import FuelCostCalculator from './components/Calculator/FuelCostCalculator';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
@@ -22,4 +22,4 @@ createRoot(document.getElementById('root')!).render(
     </div>
   </LanguageProvider>
 );
-export default Dummy;
+export default CarPool;
