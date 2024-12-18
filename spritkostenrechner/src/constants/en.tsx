@@ -8,12 +8,27 @@ export const EN: Language = {
     emailWorking: 'Florian.Sebulke@Volkswagen.de (SE-A/32)'
   },
   FUELCOSTCALCULATOR: {
-    headline: 'Fuel Cost Calculator',
-    distance: 'Distance (km)',
-    fuelEfficiency: 'Fuel Efficiency (L/100km)',
-    fuelPrice: 'Fuel Price (€/L)',
-    buttonCalculate: 'Calculate Cost',
-    estimatedFuelCost: 'Estimated Fuel Cost:'
+    HEADLINE: 'Fuel Cost Calculator',
+    DISTANCE: 'Distance (km)',
+    FUELEFFICIENCY: 'Fuel Efficiency (L/100km)',
+    FUELPRICE: 'Fuel Price (€/L)',
+    BUTTONCALCULATE: 'Calculate',
+    DETERMINEDFUELCOST: 'Determined Fuel Cost:',
+    CARPOOL_FORMATION: 'Form a carpool'
   },
-  GET_IN_TOUCH_HEADLINE: 'Get in Touch'
+  GET_IN_TOUCH_HEADLINE: 'Get in Touch',
+  CARPOOL: {
+    DRIVER: {
+      TITLE: 'How often were you the driver?',
+      DISTANCELABLE: 'Distance',
+      TRIPSPLACEHOLDER: '0',
+      DISTANCEPLACEHOLDER: 'Enter distance in km'
+    },
+    PASSENGER: {
+      TITLE: 'How often were you the passenger?',
+      DISTANCELABLE: 'Distance to meeting point',
+      TRIPSPLACEHOLDER: '0',
+      DISTANCEPLACEHOLDER: 'Enter distance in km'
+    }
+  }
 };

@@ -8,12 +8,27 @@ export const DE: Language = {
     emailWorking: 'Florian.Sebulke@Volkswagen.de (SE-A/32)'
   },
   FUELCOSTCALCULATOR: {
-    headline: 'Sprit Kosten Rechner',
-    distance: 'Entfernung (km)',
-    fuelEfficiency: 'Sprit Verbrauch (L/100km)',
-    fuelPrice: 'Sprit Preis(€/L)',
-    buttonCalculate: 'Berechne',
-    estimatedFuelCost: 'Ermittelte Kosten:'
+    HEADLINE: 'Kraftstoffkostenrechner',
+    DISTANCE: 'Entfernung (km)',
+    FUELEFFICIENCY: 'Kraftstoffverbrauch (L/100km)',
+    FUELPRICE: 'Kraftstoffpreis (€/L)',
+    BUTTONCALCULATE: 'Berechne',
+    DETERMINEDFUELCOST: 'Ermittelte Kosten:',
+    CARPOOL_FORMATION: ' Fahrgemeinschaft bilden'
   },
-  GET_IN_TOUCH_HEADLINE: 'Kontakt'
+  GET_IN_TOUCH_HEADLINE: 'Kontakt',
+  CARPOOL: {
+    DRIVER: {
+      TITLE: 'Wie oft warst du der Fahrer?',
+      DISTANCELABLE: 'Entfernung',
+      TRIPSPLACEHOLDER: '0',
+      DISTANCEPLACEHOLDER: 'Entfernung eingeben (km)'
+    },
+    PASSENGER: {
+      TITLE: 'Wie oft warst du Mitfahrer?',
+      DISTANCELABLE: 'Entfernung zum Treffpunkt',
+      TRIPSPLACEHOLDER: '0',
+      DISTANCEPLACEHOLDER: 'Entfernung eingeben (km)'
+    }
+  }
 };

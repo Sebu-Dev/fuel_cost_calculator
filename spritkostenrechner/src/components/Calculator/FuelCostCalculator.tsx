@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 
 import { CarPool } from './CarPool';
-import Distance from './Distance';
 import FuelEfficiency from './FuelEfficiency';
 import FuelPrice from './FuelPrice';
 import Carpool from './IsCarpool';
+import { TripInput } from './TripInput';
 
 type Trip = {
   driverDistance: number;
@@ -22,9 +22,9 @@ const FuelCostCalculator = () => {
   const [fuelEfficiency, setFuelEfficiency] = useState<number>(0);
   const [fuelPrice, setFuelPrice] = useState<number>(0);
   const [result, setResult] = useState<number>(0);
-  const [driverTrips, setDriverTrips] = useState(1);
+  const [driverTrips, setDriverTrips] = useState(0);
   const [driverDistance, setDriverDistance] = useState(0);
-  const [passengerTrips, setPassengerTrips] = useState(1);
+  const [passengerTrips, setPassengerTrips] = useState(0);
   const [passengerDistance, setPassengerDistance] = useState(0);
 
   const calculateCost = (trip: Trip) => {
@@ -69,9 +69,12 @@ const FuelCostCalculator = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="border-b flex-grow border-neutral-900 pb-8">
-      <h2 className="my-20 text-center text-4xl">{translations.FUELCOSTCALCULATOR.headline}</h2>
-      <Carpool carpooling={carpooling} setCarpooling={setCarpooling} />
+      className="border-b flex-grow border-neutral-900 pb-8 ">
+      <h1 className=" text-center text-4xl mb-10">{translations.FUELCOSTCALCULATOR.HEADLINE}</h1>
+
+      <div className="flex-auto w-full">
+        <Carpool carpooling={carpooling} setCarpooling={setCarpooling} />
+      </div>
       {carpooling && (
         <div className=" mb-6">
           <CarPool
@@ -88,7 +91,18 @@ const FuelCostCalculator = () => {
       )}
       <div className="flex flex-wrap justify-center gap-6">
         {/* Input Fields */}
-        {!carpooling && <Distance distance={driverDistance} setDistance={setDriverDistance} />}
+        {!carpooling && (
+          <TripInput
+            title="Wie oft warst du der Fahrer?"
+            distanceLabel="Entfernung"
+            tripsValue={driverTrips}
+            distanceValue={driverDistance}
+            onTripsChange={setDriverTrips}
+            onDistanceChange={setDriverDistance}
+            placeholderTrips="0"
+            placeholderDistance={translations.FUELCOSTCALCULATOR.DISTANCE}
+          />
+        )}
         <FuelEfficiency fuelEfficiency={fuelEfficiency} setFuelEfficiency={setFuelEfficiency} />
         <FuelPrice fuelPrice={fuelPrice} setFuelPrice={setFuelPrice} />
       </div>
@@ -97,14 +111,14 @@ const FuelCostCalculator = () => {
         <button
           onClick={carpooling ? callCalculateCost : callCalculateCost}
           className="px-6 py-3 bg-cyan-500 text-white rounded-full shadow-lg hover:bg-cyan-600 transition-all">
-          {translations.FUELCOSTCALCULATOR.buttonCalculate}
+          {translations.FUELCOSTCALCULATOR.BUTTONCALCULATE}
         </button>
       </div>
       {/* Result */}
       {result !== null && (
         <div className="text-center mt-8">
           <p className="text-2xl font-semibold text-neutral-300">
-            {translations.FUELCOSTCALCULATOR.estimatedFuelCost}
+            {translations.FUELCOSTCALCULATOR.DETERMINEDFUELCOST}
             <span className="text-cyan-400">{result.toFixed(2)} €</span>
           </p>
         </div>
