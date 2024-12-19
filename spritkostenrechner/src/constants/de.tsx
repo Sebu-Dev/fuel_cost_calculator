@@ -8,27 +8,36 @@ export const DE: Language = {
     emailWorking: 'Florian.Sebulke@Volkswagen.de (SE-A/32)'
   },
   FUELCOSTCALCULATOR: {
-    HEADLINE: 'Kraftstoffkostenrechner',
-    DISTANCE: 'Entfernung (km)',
-    FUELEFFICIENCY: 'Kraftstoffverbrauch (L/100km)',
-    FUELPRICE: 'Kraftstoffpreis (€/L)',
-    BUTTONCALCULATE: 'Berechne',
-    DETERMINEDFUELCOST: 'Ermittelte Kosten:',
-    CARPOOL_FORMATION: ' Fahrgemeinschaft bilden'
-  },
-  GET_IN_TOUCH_HEADLINE: 'Kontakt',
-  CARPOOL: {
-    DRIVER: {
-      TITLE: 'Wie oft warst du der Fahrer?',
-      DISTANCELABLE: 'Entfernung',
-      TRIPSPLACEHOLDER: '0',
-      DISTANCEPLACEHOLDER: 'Entfernung eingeben (km)'
+    TITLE: 'Kraftstoff-Kosten',
+    DISTANCE_LABEL: 'Entfernung (km)',
+    FUEL_EFFICIENCY_LABEL: 'Verbrauch (L/100km)',
+    FUEL_PRICE_LABEL: 'Kraftstoffpreis (€/L)',
+    CALCULATE_BUTTON: 'Berechne',
+    RESULT_TEXT: 'Ermittelte Kosten:',
+
+    CARDS: {
+      DRIVER_INPUT: 'Fahrereingabe'
     },
-    PASSENGER: {
-      TITLE: 'Wie oft warst du Mitfahrer?',
-      DISTANCELABLE: 'Entfernung zum Treffpunkt',
-      TRIPSPLACEHOLDER: '0',
-      DISTANCEPLACEHOLDER: 'Entfernung eingeben (km)'
-    }
-  }
+    CARPOOL: {
+      DRIVER: {
+        TITLE: 'Wie oft warst du der Fahrer?',
+        DISTANCE_LABEL: 'Entfernung',
+        TRIPS_PLACEHOLDER: '0',
+        DISTANCE_PLACEHOLDER: 'Entfernung eingeben (km)'
+      },
+      PASSENGER: {
+        TITLE: 'Wie oft warst du Mitfahrer?',
+        DISTANCE_LABEL: 'Entfernung zum Treffpunkt',
+        TRIPS_PLACEHOLDER: '0',
+        DISTANCE_PLACEHOLDER: 'Entfernung eingeben (km)'
+      }
+    },
+    TABS: {
+      SINGLE_DRIVE: 'Einzelfahrt',
+      CARPOOL_DRIVE: 'Fahrgemeinschaft'
+    },
+    FUEL_EFFICIENCY_TITLE: 'Kraftstoffeffizienz',
+    FUEL_PRICE_TITLE: 'Kraftstoffpreis'
+  },
+  GET_IN_TOUCH_HEADLINE: 'Kontakt'
 };

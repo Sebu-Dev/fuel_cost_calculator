@@ -26,30 +26,33 @@ export const CarPool: React.FC<CarPoolProps> = ({
   const { translations } = useLanguage();
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 mt-6">
-      {/* Fahrer */}
-      <TripInput
-        title={translations.CARPOOL.DRIVER.TITLE}
-        distanceLabel={translations.CARPOOL.DRIVER.DISTANCELABLE}
-        tripsValue={driverTrips}
-        distanceValue={driverDistance}
-        onTripsChange={setDriverTrips}
-        onDistanceChange={setDriverDistance}
-        placeholderTrips={translations.CARPOOL.DRIVER.TRIPSPLACEHOLDER}
-        placeholderDistance={translations.CARPOOL.DRIVER.DISTANCEPLACEHOLDER}
-      />
-
-      {/* Mitfahrer */}
-      <TripInput
-        title={translations.CARPOOL.PASSENGER.TITLE}
-        distanceLabel={translations.CARPOOL.PASSENGER.DISTANCELABLE}
-        tripsValue={passengerTrips}
-        distanceValue={passengerDistance}
-        onTripsChange={setPassengerTrips}
-        onDistanceChange={setPassengerDistance}
-        placeholderTrips={translations.CARPOOL.PASSENGER.TRIPSPLACEHOLDER}
-        placeholderDistance={translations.CARPOOL.PASSENGER.DISTANCEPLACEHOLDER}
-      />
+    <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 mb-6 gap-x-12">
+        {/* Fahrer */}
+        <TripInput
+          title={translations.FUELCOSTCALCULATOR.CARPOOL.DRIVER.TITLE}
+          distanceLabel={translations.FUELCOSTCALCULATOR.CARPOOL.DRIVER.DISTANCE_LABEL}
+          tripsValue={driverTrips}
+          distanceValue={driverDistance}
+          onTripsChange={setDriverTrips}
+          onDistanceChange={setDriverDistance}
+          placeholderTrips={translations.FUELCOSTCALCULATOR.CARPOOL.DRIVER.TRIPS_PLACEHOLDER}
+          placeholderDistance={translations.FUELCOSTCALCULATOR.CARPOOL.DRIVER.DISTANCE_PLACEHOLDER}
+        />
+        {/* Mitfahrer */}
+        <TripInput
+          title={translations.FUELCOSTCALCULATOR.CARPOOL.PASSENGER.TITLE}
+          distanceLabel={translations.FUELCOSTCALCULATOR.CARPOOL.PASSENGER.DISTANCE_LABEL}
+          tripsValue={passengerTrips}
+          distanceValue={passengerDistance}
+          onTripsChange={setPassengerTrips}
+          onDistanceChange={setPassengerDistance}
+          placeholderTrips={translations.FUELCOSTCALCULATOR.CARPOOL.PASSENGER.TRIPS_PLACEHOLDER}
+          placeholderDistance={
+            translations.FUELCOSTCALCULATOR.CARPOOL.PASSENGER.DISTANCE_PLACEHOLDER
+          }
+        />
+      </div>
     </div>
   );
 };
