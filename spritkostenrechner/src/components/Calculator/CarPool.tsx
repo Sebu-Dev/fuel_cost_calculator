@@ -3,14 +3,14 @@ import { useLanguage } from '../../context/LanguageContext';
 import { TripInput } from './TripInput';
 
 interface CarPoolProps {
-  driverTrips: number | 0;
-  driverDistance: number | 0;
-  passengerTrips: number | 0;
-  passengerDistance: number | 0;
-  setDriverTrips: (value: number | 0) => void;
-  setDriverDistance: (value: number | 0) => void;
-  setPassengerTrips: (value: number | 0) => void;
-  setPassengerDistance: (value: number | 0) => void;
+  driverTrips: number;
+  driverDistance: number;
+  passengerTrips: number;
+  passengerDistance: number;
+  setDriverTrips: (value: number) => void;
+  setDriverDistance: (value: number) => void;
+  setPassengerTrips: (value: number) => void;
+  setPassengerDistance: (value: number) => void;
 }
 
 export const CarPool: React.FC<CarPoolProps> = ({

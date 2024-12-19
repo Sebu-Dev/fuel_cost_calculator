@@ -1,23 +1,32 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
+import { useFuelState } from '../Hooks/useFuelState';
+import { useTabs } from '../Hooks/UseTabs';
+import { useTripState } from '../Hooks/UseTripState';
 import { Card } from './Card';
 import FuelEfficiency from './FuelEfficiency';
 import FuelPrice from './FuelPrice';
+import { calculateTripCost } from './Helper';
 import InputSection from './InputSection';
 import { TabsComponent } from './TabsComponent';
 import { TripInput } from './TripInput';
 
 const FuelCostCalculator = () => {
   const { translations } = useLanguage();
-  const [fuelEfficiency, setFuelEfficiency] = useState<number>(0);
-  const [fuelPrice, setFuelPrice] = useState<number>(0);
   const [result, setResult] = useState<number>(0);
-  const [driverTrips, setDriverTrips] = useState(0);
-  const [driverDistance, setDriverDistance] = useState(0);
-  const [passengerTrips, setPassengerTrips] = useState(0);
-  const [passengerDistance, setPassengerDistance] = useState(0);
-  const [activeTab, setActiveTab] = useState('singleDriveTab');
+  const {
+    driverTrips,
+    setDriverTrips,
+    driverDistance,
+    setDriverDistance,
+    passengerTrips,
+    setPassengerTrips,
+    passengerDistance,
+    setPassengerDistance
+  } = useTripState();
+  const { fuelEfficiency, setFuelEfficiency, fuelPrice, setFuelPrice } = useFuelState();
+  const { activeTab, setActiveTab } = useTabs('singleDriveTab');
 
   const tabs = [
     { id: 'singleDriveTab', label: translations.FUELCOSTCALCULATOR.TABS.SINGLE_DRIVE },
@@ -25,23 +34,23 @@ const FuelCostCalculator = () => {
   ];
 
   const calculateCost = () => {
-    const calculateTripCost = (distance: number, trips: number) =>
-      ((distance * trips) / 100) * fuelEfficiency * fuelPrice;
-
     if (!fuelEfficiency || !fuelPrice) return;
-
-    const cost =
-      calculateTripCost(driverDistance, driverTrips) +
-      (activeTab === 'singleDriveTab' ? calculateTripCost(passengerDistance, passengerTrips) : 0);
-
-    setResult(cost > 0 ? cost : 0);
+    const driverCost = calculateTripCost(driverDistance, driverTrips, fuelEfficiency, fuelPrice);
+    const passengerCost = calculateTripCost(
+      passengerDistance,
+      passengerTrips,
+      fuelEfficiency,
+      fuelPrice
+    );
+    const result = driverCost + passengerCost;
+    setResult(result);
   };
 
   const renderResult = () =>
     result !== null && (
       <div className="text-center mt-8">
         <p className="text-2xl font-semibold text-neutral-300">
-          {translations.FUELCOSTCALCULATOR.RESULT_TEXT}{' '}
+          {translations.FUELCOSTCALCULATOR.RESULT_TEXT}
           <span className="text-cyan-400">{result.toFixed(2)} €</span>
         </p>
       </div>
