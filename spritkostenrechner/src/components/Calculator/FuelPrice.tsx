@@ -2,8 +2,8 @@ import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 
 interface FuelPriceProps {
-  fuelPrice: number | null;
-  setFuelPrice: (value: number | 0) => void;
+  fuelPrice: number;
+  setFuelPrice: (value: number) => void;
   isDisplayLableText?: boolean;
 }
 
