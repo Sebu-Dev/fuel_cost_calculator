@@ -34,7 +34,7 @@ export const InputSection: React.FC<InputSectionProps> = ({
   setFuelEfficiency,
   fuelPrice,
   setFuelPrice
-}: any) => {
+}) => {
   const { translations } = useLanguage();
 
   return (

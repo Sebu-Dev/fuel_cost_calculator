@@ -5,36 +5,8 @@ import { Card } from './Card';
 import FuelEfficiency from './FuelEfficiency';
 import FuelPrice from './FuelPrice';
 import InputSection from './InputSection';
+import { TabsComponent } from './TabsComponent';
 import { TripInput } from './TripInput';
-
-type Trip = {
-  driverDistance: number;
-  driverTrips: number;
-  groupTrip?: {
-    passengerDistance: number;
-    passengerTrips: number;
-  };
-};
-
-const Tabs = ({ tabs, activeTab, setActiveTab }: any) => (
-  <div className="flex justify-center gap-6 mb-6 p-2 rounded-lg shadow-lg flex-wrap max-w-full overflow-hidden">
-    {tabs.map((tab: any) => (
-      <motion.button
-        key={tab.id}
-        className={`px-6 py-3 text-lg font-semibold transition-all ${
-          activeTab === tab.id
-            ? 'bg-cyan-600 text-white'
-            : 'bg-neutral-700 text-neutral-400 hover:bg-neutral-600 hover:text-white'
-        } rounded-md focus:outline-none`}
-        onClick={() => setActiveTab(tab.id)}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: 'spring', stiffness: 300 }}>
-        {tab.label}
-      </motion.button>
-    ))}
-  </div>
-);
 
 const FuelCostCalculator = () => {
   const { translations } = useLanguage();
@@ -124,7 +96,7 @@ const FuelCostCalculator = () => {
         {translations.FUELCOSTCALCULATOR.TITLE}
       </h1>
       <div className="flex flex-col justify-center w-full ">
-        <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+        <TabsComponent tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
         {tabContent[activeTab]}
       </div>
       <div className="flex justify-center my-8">
