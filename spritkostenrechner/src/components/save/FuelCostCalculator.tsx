@@ -22,14 +22,14 @@ const FuelCostCalculator = () => {
       animate={{ opacity: 1 }} // Wird vollständig sichtbar
       transition={{ duration: 1 }} // Dauer der Animation
       className="border-b flex-grow border-neutral-900 pb-8">
-      <h2 className="my-20 text-center text-4xl">{translations.FUELCOSTCALCULATOR.HEADLINE}</h2>
+      <h2 className="my-20 text-center text-4xl">{translations.FUELCOSTCALCULATOR.TITLE}</h2>
 
       <div className="flex flex-wrap justify-center gap-6">
         {/* Input Fields */}
         <div className="w-full sm:w-1/3 lg:w-1/4">
           <div className="flex flex-col items-center bg-neutral-800 p-6 rounded-2xl shadow-lg">
             <label className="mb-2 text-neutral-300">
-              {translations.FUELCOSTCALCULATOR.DISTANCE}
+              {translations.FUELCOSTCALCULATOR.DISTANCE_LABEL}
             </label>
             <input
               type="number"
@@ -44,7 +44,7 @@ const FuelCostCalculator = () => {
         <div className="w-full sm:w-1/3 lg:w-1/4">
           <div className="flex flex-col items-center bg-neutral-800 p-6 rounded-2xl shadow-lg">
             <label className="mb-2 text-neutral-300">
-              {translations.FUELCOSTCALCULATOR.FUELEFFICIENCY}
+              {translations.FUELCOSTCALCULATOR.FUEL_EFFICIENCY_LABEL}
             </label>
             <input
               type="number"
@@ -59,7 +59,7 @@ const FuelCostCalculator = () => {
         <div className="w-full sm:w-1/3 lg:w-1/4">
           <div className="flex flex-col items-center bg-neutral-800 p-6 rounded-2xl shadow-lg">
             <label className="mb-2 text-neutral-300">
-              {translations.FUELCOSTCALCULATOR.FUELPRICE}
+              {translations.FUELCOSTCALCULATOR.FUEL_PRICE_LABEL}
             </label>
             <input
               type="number"
@@ -77,7 +77,7 @@ const FuelCostCalculator = () => {
         <button
           onClick={calculateCost}
           className="px-6 py-3 bg-cyan-500 text-white rounded-full shadow-lg hover:bg-cyan-600 transition-all">
-          {translations.FUELCOSTCALCULATOR.BUTTONCALCULATE}
+          {translations.FUELCOSTCALCULATOR.CALCULATE_BUTTON}
         </button>
       </div>
 
@@ -85,7 +85,7 @@ const FuelCostCalculator = () => {
       {result !== null && (
         <div className="text-center mt-8">
           <p className="text-2xl font-semibold text-neutral-300">
-            {translations.FUELCOSTCALCULATOR.DETERMINEDFUELCOST}
+            {translations.FUELCOSTCALCULATOR.RESULT_TEXT}
             <span className="text-cyan-400">{result.toFixed(2)} €</span>
           </p>
         </div>
