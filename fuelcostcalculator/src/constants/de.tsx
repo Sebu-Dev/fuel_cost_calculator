@@ -8,12 +8,12 @@ export const DE: Language = {
     emailWorking: 'Florian.Sebulke@Volkswagen.de (SE-A/32)'
   },
   FUELCOSTCALCULATOR: {
-    TITLE: 'Kraftstoff-Kosten',
+    TITLE: 'Kraftstoff Kosten Rechner',
     DISTANCE_LABEL: 'Entfernung (km)',
     FUEL_EFFICIENCY_LABEL: 'Verbrauch (L/100km)',
     FUEL_PRICE_LABEL: 'Kraftstoffpreis (€/L)',
     CALCULATE_BUTTON: 'Berechne',
-    RESULT_TEXT: 'Ermittelte Kosten:',
+    RESULT_TEXT: 'Kosten:',
 
     CARDS: {
       DRIVER_INPUT: 'Fahrereingabe'
