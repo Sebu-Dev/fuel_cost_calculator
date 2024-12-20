@@ -6,7 +6,6 @@ import { useTabs } from '../Hooks/UseTabs';
 import { useTripState } from '../Hooks/UseTripState';
 import { Card } from './Card';
 import FuelInputField from './FuelInputFields';
-
 import { calculateTripCost } from './Helper';
 import InputSection from './InputSection';
 import { TabContent } from './TabContent';
