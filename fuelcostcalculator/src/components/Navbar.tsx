@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import logo from '../assets/Fs-logo.png';
 import LanguageButton from './LanguageButton';
 function GithubLink() {
@@ -25,7 +24,7 @@ const Navbar = () => {
   return (
     <nav className="mb-14 lg:mb-20 flex  items-center justify-between py-3">
       <div className="flex flex-shrink-0 items-center">
-        <Link to="https://sebu-dev.github.io/portfolio/">
+        <a href="https://sebu-dev.github.io/portfolio/">
           <motion.img
             src={logo}
             alt="logo"
@@ -34,7 +33,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.9 }}
             transition={{ type: 'spring', stiffness: 300, damping: 10 }}
           />
-        </Link>
+        </a>
       </div>
       <div className="mt-4 lg:m-8 flex items-center justify-center gap-4 text-2xl  ">
         <GithubLink />

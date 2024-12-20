@@ -115,7 +115,14 @@ const FuelCostCalculator = () => {
       </h1>
       <div className="flex flex-col justify-center w-full ">
         <TabsComponent tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-        <TabContent activeTab={activeTab} content={tabContent} />
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}>
+          <TabContent activeTab={activeTab} content={tabContent} />
+        </motion.div>
       </div>
       <div className="flex justify-center my-8">
         <motion.button
