@@ -13,7 +13,7 @@ export const EN: Language = {
     FUEL_EFFICIENCY_LABEL: 'Fuel Efficiency (L/100km)',
     FUEL_PRICE_LABEL: 'Fuel Price (€/L)',
     CALCULATE_BUTTON: 'Calculate',
-    RESULT_TEXT: 'Determined Fuel Cost:',
+    RESULT_TEXT: 'Cost:',
 
     CARDS: {
       DRIVER_INPUT: 'Driver input'

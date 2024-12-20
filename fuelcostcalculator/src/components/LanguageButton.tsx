@@ -1,4 +1,3 @@
-// components/LanguageButton.tsx
 import { motion } from 'framer-motion';
 import { GrLanguage } from 'react-icons/gr';
 import { useLanguage } from '../context/LanguageContext';
