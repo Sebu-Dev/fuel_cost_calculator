@@ -76,11 +76,7 @@ const FuelCostCalculator = () => {
             value={fuelEfficiency}
             setValue={setFuelEfficiency}
           />
-          <FuelInputField
-            labelKey={'FUEL_PRICE_LABEL'}
-            value={fuelEfficiency}
-            setValue={setFuelEfficiency}
-          />
+          <FuelInputField labelKey={'FUEL_PRICE_LABEL'} value={fuelPrice} setValue={setFuelPrice} />
         </Card>
       </div>
     ),
