@@ -2,8 +2,7 @@ import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { Card } from './Card';
 import { CarPool } from './CarPool';
-import FuelEfficiency from './FuelEfficiency';
-import FuelPrice from './FuelPrice';
+import FuelInputField from './FuelInputFields';
 
 type InputSectionProps = {
   driverTrips: number;
@@ -55,16 +54,16 @@ export const InputSection: React.FC<InputSectionProps> = ({
       </div>
       <div className="sm:col-span-1 lg:col-span-1 flex flex-col  ">
         <Card title={translations.FUELCOSTCALCULATOR.FUEL_EFFICIENCY_TITLE}>
-          <FuelEfficiency
-            fuelEfficiency={fuelEfficiency}
-            setFuelEfficiency={setFuelEfficiency}
-            isDisplayLableText={false}
+          <FuelInputField
+            labelKey={'FUEL_EFFICIENCY_LABEL'}
+            value={fuelEfficiency}
+            setValue={setFuelEfficiency}
           />
         </Card>
       </div>
       <div className="sm:col-span-1 lg:col-span-1 flex flex-col   ">
         <Card title={translations.FUELCOSTCALCULATOR.FUEL_PRICE_TITLE}>
-          <FuelPrice fuelPrice={fuelPrice} setFuelPrice={setFuelPrice} isDisplayLableText={false} />
+          <FuelInputField labelKey={'FUEL_PRICE_LABEL'} value={fuelPrice} setValue={setFuelPrice} />
         </Card>
       </div>
     </div>

@@ -5,10 +5,11 @@ import { useFuelState } from '../Hooks/useFuelState';
 import { useTabs } from '../Hooks/UseTabs';
 import { useTripState } from '../Hooks/UseTripState';
 import { Card } from './Card';
-import FuelEfficiency from './FuelEfficiency';
-import FuelPrice from './FuelPrice';
+import FuelInputField from './FuelInputFields';
+
 import { calculateTripCost } from './Helper';
 import InputSection from './InputSection';
+import { TabContent } from './TabContent';
 import { TabsComponent } from './TabsComponent';
 import { TripInput } from './TripInput';
 
@@ -70,8 +71,16 @@ const FuelCostCalculator = () => {
             placeholderTrips="0"
             placeholderDistance={translations.FUELCOSTCALCULATOR.DISTANCE_LABEL}
           />
-          <FuelEfficiency fuelEfficiency={fuelEfficiency} setFuelEfficiency={setFuelEfficiency} />
-          <FuelPrice fuelPrice={fuelPrice} setFuelPrice={setFuelPrice} />
+          <FuelInputField
+            labelKey={'FUEL_EFFICIENCY_LABEL'}
+            value={fuelEfficiency}
+            setValue={setFuelEfficiency}
+          />
+          <FuelInputField
+            labelKey={'FUEL_PRICE_LABEL'}
+            value={fuelEfficiency}
+            setValue={setFuelEfficiency}
+          />
         </Card>
       </div>
     ),
@@ -106,14 +115,17 @@ const FuelCostCalculator = () => {
       </h1>
       <div className="flex flex-col justify-center w-full ">
         <TabsComponent tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-        {tabContent[activeTab]}
+        <TabContent activeTab={activeTab} content={tabContent} />
       </div>
       <div className="flex justify-center my-8">
-        <button
+        <motion.button
           onClick={calculateCost}
-          className="px-6 py-3 bg-cyan-500 text-white rounded-full shadow-lg hover:bg-cyan-600 transition-all">
+          className="px-6 py-3 bg-cyan-500 text-white rounded-full shadow-lg"
+          whileHover={{ scale: 1.1, backgroundColor: '#38bdf8' }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: 'spring', stiffness: 300 }}>
           {translations.FUELCOSTCALCULATOR.CALCULATE_BUTTON}
-        </button>
+        </motion.button>
       </div>
       {renderResult()}
     </motion.div>

@@ -20,7 +20,7 @@ export const DE: Language = {
     },
     CARPOOL: {
       DRIVER: {
-        TITLE: 'Wie oft warst du der Fahrer?',
+        TITLE: 'Wie oft bist du gefahren?',
         DISTANCE_LABEL: 'Entfernung',
         TRIPS_PLACEHOLDER: '0',
         DISTANCE_PLACEHOLDER: 'Entfernung eingeben (km)'
