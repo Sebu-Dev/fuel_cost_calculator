@@ -26,15 +26,15 @@ export const DE: Language = {
         DISTANCE_PLACEHOLDER: 'Entfernung eingeben (km)'
       },
       PASSENGER: {
-        TITLE: 'Wie oft warst du Mitfahrer?',
+        TITLE: 'Wie oft bist du zum Treffpunkt gefahren?',
         DISTANCE_LABEL: 'Entfernung zum Treffpunkt',
         TRIPS_PLACEHOLDER: '0',
         DISTANCE_PLACEHOLDER: 'Entfernung eingeben (km)'
       }
     },
     TABS: {
-      SINGLE_DRIVE: 'Einzelfahrt',
-      CARPOOL_DRIVE: 'Fahrgemeinschaft'
+      SINGLE_DRIVE: 'Fahrtkosten',
+      CARPOOL_DRIVE: 'Fahrtkosten Fahrgemeinschaft'
     },
     FUEL_EFFICIENCY_TITLE: 'Kraftstoffeffizienz',
     FUEL_PRICE_TITLE: 'Kraftstoffpreis'

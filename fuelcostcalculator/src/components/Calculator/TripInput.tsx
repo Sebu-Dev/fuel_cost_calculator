@@ -1,4 +1,5 @@
 import React from 'react';
+import Checkbox from './CheckBox';
 
 interface TripInputProps {
   title: string;
@@ -35,6 +36,7 @@ export const TripInput: React.FC<TripInputProps> = ({
           />
         </div>
         <div className="">
+          <Checkbox />
           <label className="mb-2 text-neutral-300">{distanceLabel}</label>
           <input
             type="number"
