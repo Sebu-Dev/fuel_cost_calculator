@@ -34,7 +34,7 @@ export const DE: Language = {
     },
     TABS: {
       SINGLE_DRIVE: 'Fahrtkosten',
-      CARPOOL_DRIVE: 'Fahrtkosten Fahrgemeinschaft'
+      CARPOOL_DRIVE: 'Fahrtkosten mit Fahrgemeinschaft'
     },
     FUEL_EFFICIENCY_TITLE: 'Kraftstoffeffizienz',
     FUEL_PRICE_TITLE: 'Kraftstoffpreis'
