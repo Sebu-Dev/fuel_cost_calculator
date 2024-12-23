@@ -33,8 +33,8 @@ export const EN: Language = {
       }
     },
     TABS: {
-      SINGLE_DRIVE: 'Single ',
-      CARPOOL_DRIVE: 'Carpool '
+      SINGLE_DRIVE: 'Single Cost ',
+      CARPOOL_DRIVE: 'Carpool Cost'
     },
     FUEL_EFFICIENCY_TITLE: 'Fuel efficiency',
     FUEL_PRICE_TITLE: 'Fuel price'
